@@ -1,0 +1,20 @@
+{
+  "name": "mern-graphql-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rico Sandyca Novenza",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd server && yarn start",
+    "build": "yarn build:server && yarn build:client",
+    "build:server": "cd server && yarn build",
+    "build:client": "cd client && yarn build",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
+    "dev:server": "cd server && cross-env NODE_ENV=\"development\" yarn dev",
+    "dev:client": "cd client && yarn start"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0"
+  }
+}
