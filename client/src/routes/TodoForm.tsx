@@ -18,7 +18,7 @@ class TodoForm extends React.Component<IProps, IState> {
     description: ''
   }
 
-  createTodo = (e: any) => {
+  createTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const { title, description }: IState = this.state
     this.props.mutate({
@@ -29,8 +29,8 @@ class TodoForm extends React.Component<IProps, IState> {
       .catch((err: any) => alert(err.message))
   }
 
-  handleChange = (e: any) => {
-    const { name, value }: { name: keyof IState, value: string } = e.target
+  handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const { name, value }: any = e.target
     this.setState({
       [name]: value
     })
@@ -42,9 +42,15 @@ class TodoForm extends React.Component<IProps, IState> {
         <form onSubmit={this.createTodo}>
           <h4>TODO Form</h4>
           <label>Title</label>
-          <input name='title' value={this.state.title} onChange={this.handleChange}/>
+          <input
+            name='title'
+            value={this.state.title}
+            onChange={this.handleChange}/>
           <label>Description</label>
-          <input name='description' value={this.state.description} onChange={this.handleChange}/>
+          <input
+            name='description'
+            value={this.state.description}
+            onChange={this.handleChange}/>
           <input type="submit" value="Submit" />
         </form>
       </div>

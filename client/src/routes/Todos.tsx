@@ -44,7 +44,9 @@ class Todos extends React.Component<IProps> {
                     key={todo._id}>
                     <div>
                       {todo.title}
-                      <span className='secondary-content red-text' onClick={() => this.deleteTodo(todo._id)}>
+                      <span
+                      className='secondary-content red-text'
+                      onClick={() => this.deleteTodo(todo._id)}>
                         <i className='material-icons'>delete</i>
                       </span>
                     </div>
