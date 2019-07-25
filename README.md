@@ -1,7 +1,5 @@
 # MERN-GraphQL-TypeScript
 
-<blockquote>Client masih dalam tahap pengembangan</blockquote>
-
 Contoh aplikasi TODO yang dibangun menggunakan
 - MongoDB
 - Express
